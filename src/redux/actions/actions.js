@@ -8,6 +8,9 @@ import {
   DELETE_TODO_REQUEST,
   DELETE_TODO_SUCCESS,
   DELETE_TODO_FAILURE,
+  UPDATE_TODO_REQUEST,
+  UPDATE_TODO_SUCCESS,
+  UPDATE_TODO_FAILURE
 } from '../actionTypes/actionTypes';
 
 export const fetchTodoRequest = () => {
@@ -90,3 +93,30 @@ export const deleteTodoError = (error) => {
     }
   }
 }
+export const updateTodoDataRequest = () => {
+  return {
+    type: UPDATE_TODO_REQUEST,
+    payload: {
+      isLoading: true
+    }
+  };
+};
+
+export const updateTodoDataSuccess = () => {
+  return {
+    type: UPDATE_TODO_SUCCESS,
+    payload: {
+      isLoading: false,
+    }
+  };
+};
+
+export const updateTodoDataFailure = error => {
+  return {
+    type: UPDATE_TODO_FAILURE,
+    payload: {
+      error
+    }
+  };
+};
+

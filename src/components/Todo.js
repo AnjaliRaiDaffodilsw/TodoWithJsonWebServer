@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import updateData from '../api/updateData';
 import fetchData from '../api/fetchData';
 import addData from '../api/addData';
 import deleteData from '../api/deleteData';
@@ -27,6 +28,10 @@ const Todo = () => {
     dispatch(fetchData());
   }
 
+  const handleEdit = (value, id) => {
+    dispatch(updateData({ title: value }, id));
+    dispatch(fetchData());
+  }
   return (
     <div>
       <TodoListHeader />
@@ -37,6 +42,7 @@ const Todo = () => {
       <TodoList
         todoItemsState={todoItems}
         deleteHandler={handleDelete}
+        editHandler={handleEdit}
       />
     </div>
   )

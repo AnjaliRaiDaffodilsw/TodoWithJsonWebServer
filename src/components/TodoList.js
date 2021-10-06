@@ -3,7 +3,7 @@ import React from 'react';
 import TodoListItem from './TodoListItem';
 
 const TodoList = (props) => {
-  const { todoItemsState, deleteHandler } = props;
+  const { todoItemsState, deleteHandler, editHandler } = props;
   console.log(todoItemsState)
   return (
     <div>
@@ -14,6 +14,7 @@ const TodoList = (props) => {
             textValue={value.title}
             id={value.id}
             deleteHandler={deleteHandler}
+            editHandler={editHandler}
           />
         )
       })}
