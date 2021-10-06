@@ -5,6 +5,9 @@ import {
   FETCH_ADDTODO_REQUEST,
   FETCH_ADDTODO_SUCCESS,
   FETCH_ADDTODO_FAILURE,
+  DELETE_TODO_REQUEST,
+  DELETE_TODO_SUCCESS,
+  DELETE_TODO_FAILURE,
 } from '../actionTypes/actionTypes';
 
 export const fetchTodoRequest = () => {
@@ -55,6 +58,33 @@ export const fetchAddTodoSuccess = () => {
 export const fetchAddTodoFailure = (error) => {
   return {
     type: FETCH_ADDTODO_FAILURE,
+    payload: {
+      error,
+    }
+  }
+}
+
+export const deleteTodoRequest = () => {
+  return {
+    type: DELETE_TODO_REQUEST,
+    payload: {
+      isLoading: true,
+    }
+  }
+}
+
+export const deleteTodoSuccess = () => {
+  return {
+    type: DELETE_TODO_SUCCESS,
+    payload: {
+      isLoading: false,
+    }
+  }
+}
+
+export const deleteTodoError = (error) => {
+  return {
+    type: DELETE_TODO_FAILURE,
     payload: {
       error,
     }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import fetchData from '../api/fetchData';
 import addData from '../api/addData';
+import deleteData from '../api/deleteData';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 import TodoListHeader from './TodoListHeader';
@@ -21,6 +22,11 @@ const Todo = () => {
     dispatch(fetchData());
   }
 
+  const handleDelete = (id) => {
+    dispatch(deleteData(id));
+    dispatch(fetchData());
+  }
+
   return (
     <div>
       <TodoListHeader />
@@ -30,6 +36,7 @@ const Todo = () => {
       />
       <TodoList
         todoItemsState={todoItems}
+        deleteHandler={handleDelete}
       />
     </div>
   )
