@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import fetchData from '../api/fetchData';
+import addData from '../api/addData';
+import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 import TodoListHeader from './TodoListHeader';
+
 
 const Todo = () => {
   const dispatch = useDispatch();
@@ -13,9 +16,18 @@ const Todo = () => {
     dispatch(fetchData());
   }, [dispatch])
 
+  const handleSubmit = (value) => {
+    dispatch(addData({ title: value }));
+    dispatch(fetchData());
+  }
+
   return (
     <div>
       <TodoListHeader />
+      <AddTodo
+        submitHandler={handleSubmit}
+        placeholderValue="Add To do"
+      />
       <TodoList
         todoItemsState={todoItems}
       />

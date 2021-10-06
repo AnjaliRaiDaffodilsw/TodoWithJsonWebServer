@@ -4,6 +4,7 @@ import TodoListItem from './TodoListItem';
 
 const TodoList = (props) => {
   const { todoItemsState } = props;
+  console.log(todoItemsState)
   return (
     <div>
       {todoItemsState.map((value) => {
