@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "title": "Learn JavaScript",
+      "id": 1
+    },
+    {
+      "title": "Learn React",
+      "id": 2
+    },
+    {
+      "title": "Play around in JS",
+      "id": 3
+    },
+    {
+      "title": "Build something Great",
+      "id": 4
+    },
+    {
+      "title": "add Java",
+      "id": 5
+    },
+    {
+      "title": "learn CSS",
+      "id": 6
+    }
+  ]
+}
