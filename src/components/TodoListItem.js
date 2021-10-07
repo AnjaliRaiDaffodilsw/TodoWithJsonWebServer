@@ -19,7 +19,7 @@ const TodoListItem = (props) => {
         </Link>
         <span>
           <FontAwesomeIcon
-            className="faicons"
+            className="faicons delete-button"
             icon="trash"
             onClick={() => deleteHandler(id)}
           />

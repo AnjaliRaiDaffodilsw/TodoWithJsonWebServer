@@ -12,7 +12,7 @@ const AddTodo = (props) => {
   let value = todoItemsState.filter((val) => {
     return val.id === +id
   });
-  
+
   let initialValue = value[0].title;
 
   const handleSubmit = (event, inputValue) => {

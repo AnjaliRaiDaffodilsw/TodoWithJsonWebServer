@@ -3,7 +3,11 @@
   background-color: #8561db;
   min-height: 500px;
   width: 500px;
-  margin: 40px auto;
+  margin: -10% auto;
   padding: 20px;
   padding-bottom: 23px;
+}
+
+.form-container {
+  margin-top: 16%;
 }

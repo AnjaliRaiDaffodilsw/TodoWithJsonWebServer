@@ -3,8 +3,8 @@
 	color: black;
 	width: auto;
 	margin: 20px auto;
-	padding: 10px;
-	height: 30px;
+	padding: 1px;
+	height: 46px;
 	background-color: #fa8aef;
 	border-radius: 5px;
 	display: flex;
@@ -12,7 +12,8 @@
 }
 
 .list p {
-	margin-top: 7px;
+	margin-top: 10px;
+	padding-left: 9px;
 }
 
 .non-editable-input {
@@ -23,46 +24,17 @@
 	font-size: 17px;
 }
 
-.input-field {
-	padding: 5px;
-	transition: ease-in-out;
-	background-color: #fa8aef;
-	border: 0;
-	color: black;
-	font-size: 17px;
-}
-
-.list p span {
-	cursor: pointer;
-	color: white;
-	margin-top: 6px;
-	padding-left: 283px;
-	float: right;
-}
-
-.non-editable-button {
-	background-color: #fa8aef;
-	border: none;
-}
-
-.save-button {
-	height: 31px;
-	margin: 0px 11px 0px -68px;
-	cursor: pointer;
-	background-color: rgb(221, 182, 75);
-	border-radius: 8px;
-}
-
 .buttons-container {
-	margin-right: 6px;
+	margin: 5px 18px 0 0;
 	display: flex;
 }
 
-.editable-button {
-	background-color: #fa8aef;
-	border: none;
+.delete-button {
+	margin-left: 19px;
+	margin-top: 10px;
+	cursor: pointer;
 }
 
-.editable-button input:focus {
-	outline: none;
+.edit-button{
+	height: 34px;
 }
