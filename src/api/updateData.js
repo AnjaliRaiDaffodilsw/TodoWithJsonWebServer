@@ -7,7 +7,6 @@ import {
 } from '../redux/actions/actions';
 
 export function updateData(dataObj, id) {
-  console.log(dataObj);
   return dispatch => {
     dispatch(updateTodoDataRequest());
     axios.patch(`http://localhost:3000/posts/${id}`, dataObj)

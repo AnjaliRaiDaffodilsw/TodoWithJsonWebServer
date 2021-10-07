@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import '../assets/styles/AddTodo.css';
 
 const AddTodo = (props) => {
-  const { placeholderValue, submitHandler } = props;
+  const { editHandler } = props;
+  const { id } = useParams();
   const [inputValue, setInputValue] = useState('');
   let history = useHistory();
+  
   useEffect(() => {
-    if(inputValue) {
-      submitHandler(inputValue);
+    if (inputValue) {
+      editHandler(inputValue, id);
       history.push("/");
     }
   }, [inputValue]);
@@ -31,7 +33,7 @@ const AddTodo = (props) => {
           type="text"
           name="userInput"
           autoComplete="off"
-          placeholder={placeholderValue}
+          placeholder="EditTodo"
           className="input-field"
         />
         <button type="submit">+</button>
