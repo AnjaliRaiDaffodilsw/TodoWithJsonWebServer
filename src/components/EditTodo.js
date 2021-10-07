@@ -2,43 +2,39 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom";
 
 import '../assets/styles/AddTodo.css';
+import Form from './Form';
 
 const AddTodo = (props) => {
-  const { editHandler } = props;
+  const { editHandler, todoItemsState } = props;
   const { id } = useParams();
-  const [inputValue, setInputValue] = useState('');
   let history = useHistory();
+
+  let value = todoItemsState.filter((val) => {
+    return val.id === +id
+  });
   
-  useEffect(() => {
+  let initialValue = value[0].title;
+
+  const handleSubmit = (event, inputValue) => {
+    event.preventDefault();
     if (inputValue) {
       editHandler(inputValue, id);
       history.push("/");
     }
-  }, [inputValue]);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let input = event.target.userInput.value;
-    if (input) {
-      setInputValue(input)
-    }
   }
 
   return (
-    <div>
-      <form
-        className="to-do-form"
-        onSubmit={(event) => handleSubmit(event)}>
-        <input
-          type="text"
-          name="userInput"
-          autoComplete="off"
-          placeholder="EditTodo"
-          className="input-field"
-        />
-        <button type="submit">+</button>
-      </form>
-    </div >
+    <>
+      <Form
+        inputType="text"
+        submitHandler={handleSubmit}
+        placeholderValue="Edit Your Todo"
+        buttonTitle="Edit Todo"
+        buttonType="submit"
+        cardHeader="Edit a Todo"
+        initialValue={initialValue}
+      />
+    </>
   )
 }
 
